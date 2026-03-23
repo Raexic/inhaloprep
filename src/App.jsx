@@ -492,14 +492,14 @@ export default function App() {
   };
 
   let content;
-  if(view==="chat") content=<Chat title={getTitle()} color={getColor()}/>;
-  else if(view==="debrief") content=<Debrief/>;
-  else if(tab==="home") content=<Home/>;
-  else if(tab==="sim") content=<SimPick/>;
-  else if(tab==="theory") content=<TheoryPick/>;
-  else if(tab==="gab") content=<GabPick/>;
-  else content=<EspPick/>;
-
+  if(view==="chat") content=Chat({title:getTitle(), color:getColor()});
+  else if(view==="debrief") content=Debrief();
+  else if(tab==="home") content=Home();
+  else if(tab==="sim") content=SimPick();
+  else if(tab==="theory") content=TheoryPick();
+  else if(tab==="gab") content=GabPick();
+  else content=EspPick();
+  
   return (
     <div className="h-screen flex flex-col bg-white">
       <div className="flex-1 overflow-hidden">{content}</div>
